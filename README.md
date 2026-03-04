@@ -5,86 +5,135 @@
 <title>Shampo Kuda Anti Hairfall</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --gold:#b8933d;
-  --dark:#1a1a1a;
-  --soft:#f4f4f4;
+  --dark:#111;
+  --gray:#666;
+  --light:#f9f9f9;
 }
 
 *{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-  margin:0;
+  font-family:'Poppins',sans-serif;
   background:#fff;
   color:var(--dark);
   line-height:1.7;
 }
 
+/* CONTAINER */
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
 /* NAV */
 nav{
-  padding:18px 40px;
+  background:#000;
+  padding:18px 0;
+}
+
+nav .container{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:#111;
   color:#fff;
 }
 
 nav strong{
   color:var(--gold);
+  font-size:20px;
 }
 
 /* HERO */
 .hero{
-  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url('https://png.pngtree.com/thumb_back/fh260/background/20251203/pngtree-chinese-new-year-2026-fire-horse-album-cover-image_20695874.webp');
-  background-size:cover;
-  background-position:center;
+  background:#111;
   color:#fff;
-  padding:120px 40px;
-  text-align:center;
+  padding:100px 0;
+}
+
+.hero .container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
 }
 
 .hero h1{
-  font-size:44px;
+  font-size:42px;
   margin-bottom:20px;
 }
 
 .hero p{
-  max-width:600px;
-  margin:auto;
-  font-size:18px;
+  color:#ccc;
+  margin-bottom:30px;
 }
 
-.cta{
+.hero img{
+  width:100%;
+  max-width:380px;
+  display:block;
+  margin:auto;
+}
+
+.btn{
   display:inline-block;
-  margin-top:30px;
   background:var(--gold);
   color:#000;
-  padding:16px 36px;
+  padding:14px 30px;
   border-radius:40px;
   font-weight:600;
   text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  opacity:.85;
 }
 
 /* SECTION */
 section{
-  padding:80px 40px;
-  max-width:1100px;
-  margin:auto;
+  padding:80px 0;
 }
 
 section h2{
   font-size:32px;
   margin-bottom:20px;
+  text-align:center;
 }
 
-/* PRODUCT */
-.product{
+/* BENEFITS */
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:var(--light);
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+/* PRODUCT DETAIL */
+.product-detail{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:50px;
@@ -92,118 +141,148 @@ section h2{
   margin-top:40px;
 }
 
-.product img{
-  width:100%;
-  max-width:350px;
-  margin:auto;
-  display:block;
-}
-
-.benefits ul{
+.product-detail ul{
+  margin-top:20px;
   padding-left:20px;
 }
 
-.benefits li{
+.product-detail li{
   margin-bottom:10px;
 }
 
-/* WA BUTTON FIXED */
-.wa-fixed{
+/* CTA SECTION */
+.cta-section{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:80px 0;
+}
+
+.cta-section h2{
+  margin-bottom:30px;
+}
+
+/* FLOAT WA */
+.wa-float{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:#fff;
-  padding:16px 22px;
+  padding:14px 20px;
   border-radius:50px;
   font-weight:600;
   text-decoration:none;
-  box-shadow:0 8px 25px rgba(0,0,0,.2);
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .product{
+/* RESPONSIVE */
+@media(max-width:900px){
+
+  .hero .container,
+  .product-detail{
     grid-template-columns:1fr;
     text-align:center;
   }
+
+  .benefits{
+    grid-template-columns:1fr;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <strong>Shampo Kuda</strong>
-  <div>Anti Hairfall Treatment</div>
+  <div class="container">
+    <strong>Shampo Kuda</strong>
+    <div>Anti Hairfall Treatment</div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Rambut Kuat & Lebih Tebal<br>Tanpa Rontok Berlebihan</h1>
-  <p>Shampo Kuda diformulasikan untuk membantu mengurangi kerontokan dan memperkuat akar rambut sejak pemakaian rutin.</p>
-  <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda%20Anti%20Hairfall" class="cta">
-    Pesan Sekarang via WhatsApp
-  </a>
+  <div class="container">
+    <div>
+      <h1>Rambut Lebih Kuat & Tidak Mudah Rontok</h1>
+      <p>
+        Shampo Kuda membantu memperkuat akar rambut dan menjaga
+        kesehatan kulit kepala untuk tampilan rambut lebih tebal.
+      </p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda"
+         class="btn">Pesan via WhatsApp</a>
+    </div>
+    <div>
+      <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/96/MTA-114383193/no_brand_the_caviar_sampo_kuda_shampoo_original_bpom_caviar_full27_pcaj2wy4.jpg"
+           alt="Shampo Kuda">
+    </div>
+  </div>
 </div>
 
-<!-- TENTANG -->
+<!-- BENEFITS -->
 <section>
-  <h2>Kenapa Rambut Bisa Rontok?</h2>
-  <p>
-    Rambut rontok sering terjadi karena akar rambut yang melemah,
-    kulit kepala berminyak berlebih, stres, atau kurangnya nutrisi.
-    Jika tidak ditangani sejak awal, rambut bisa semakin menipis.
-  </p>
-</section>
-
-<!-- PRODUCT -->
-<section>
-  <h2>Shampo Kuda Anti Hairfall</h2>
-
-  <div class="product">
-    <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/96/MTA-114383193/no_brand_the_caviar_sampo_kuda_shampoo_original_bpom_caviar_full27_pcaj2wy4.jpg" alt="Shampo Kuda">
-
+  <div class="container">
+    <h2>Manfaat Shampo Kuda</h2>
     <div class="benefits">
-      <p>
-        Shampo Kuda dikenal membantu memperkuat akar rambut dan menjaga
-        kesehatan kulit kepala secara menyeluruh.
-      </p>
-
-      <ul>
-        <li>Membantu mengurangi kerontokan</li>
-        <li>Membersihkan kulit kepala secara maksimal</li>
-        <li>Membantu memperkuat akar rambut</li>
-        <li>Membuat rambut terasa lebih tebal & sehat</li>
-        <li>Cocok untuk pria & wanita</li>
-      </ul>
+      <div class="card">
+        <h3>Mengurangi Kerontokan</h3>
+        <p>Membantu mengurangi rambut rontok akibat akar yang lemah.</p>
+      </div>
+      <div class="card">
+        <h3>Memperkuat Akar</h3>
+        <p>Menutrisi kulit kepala untuk rambut lebih kokoh.</p>
+      </div>
+      <div class="card">
+        <h3>Rambut Lebih Tebal</h3>
+        <p>Membuat rambut terasa lebih bervolume & sehat.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CARA PAKAI -->
+<!-- DETAIL -->
 <section>
-  <h2>Cara Penggunaan</h2>
-  <p>
-    Gunakan secara rutin saat keramas. Pijat lembut kulit kepala selama 2–3 menit,
-    lalu bilas hingga bersih. Untuk hasil maksimal, gunakan secara teratur.
-  </p>
+  <div class="container">
+    <h2>Tentang Produk</h2>
+    <div class="product-detail">
+      <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/96/MTA-114383193/no_brand_the_caviar_sampo_kuda_shampoo_original_bpom_caviar_full27_pcaj2wy4.jpg">
+      <div>
+        <p>
+          Diformulasikan untuk membantu menjaga keseimbangan kulit kepala
+          dan memperkuat struktur rambut secara menyeluruh.
+        </p>
+        <ul>
+          <li>Cocok untuk pria & wanita</li>
+          <li>Aman untuk penggunaan rutin</li>
+          <li>Mudah dibilas & tidak membuat kering</li>
+          <li>Digunakan secara teratur untuk hasil optimal</li>
+        </ul>
+        <br>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda"
+           class="btn">Order Sekarang</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section style="text-align:center;">
-  <h2>Siap Memulai Perawatan Rambutmu?</h2>
-  <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda%20Anti%20Hairfall" class="cta">
-    Pesan Sekarang
-  </a>
-</section>
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <h2>Mulai Perawatan Rambutmu Hari Ini</h2>
+    <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda"
+       class="btn">Chat WhatsApp Sekarang</a>
+  </div>
+</div>
 
-<footer style="background:#111;color:#ccc;text-align:center;padding:30px;">
+<footer style="text-align:center;padding:30px;font-size:14px;color:#777;">
   © 2026 Shampo Kuda Anti Hairfall
 </footer>
 
-<!-- FLOATING WA -->
-<a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda%20Anti%20Hairfall"
-   class="wa-fixed">Chat WhatsApp</a>
+<a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20pesan%20Shampo%20Kuda"
+   class="wa-float">WhatsApp</a>
 
 </body>
 </html>
